@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Color palette */
+$colors: (
+    "primary": #b76e79,
+    "info": #00f0f0,
+    "success": #009400,
+    "warning": #ffd700,
+    "danger": #ff1414,
+
+    "red": #ff1414,
+    "maroon": #800000,
+    "brown": #a52a2a,
+    "tan": #d2b48c,
+    "orange": #ffa500,
+    "gold": #ffd700,
+    "yellow": #ffff14,
+    "lime": #14ff14,
+    "olive": #858500,
+    "green": #009400,
+    "teal": #009494,
+    "cyan": #00f0f0,
+    "blue": #1414ff,
+    "navy": #000094,
+    "purple": #9914ff,
+    "magenta": #ff2eff,
+    "pink": #ffc0cb,
+    "gray": #828282,
+    "silver": #c0c0c0,
+    "black": #0a0a0a,
+    "white": #f7f7f7
+) !default;

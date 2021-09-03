@@ -1,0 +1,106 @@
+@use "sass:math";
+
+$grid-columns: 12;
+$grid-gaps: (
+    "0": 0,
+    "1": 0.125rem,
+    "2": 0.375rem,
+    "3": 0.5rem,
+    "4": 0.625rem,
+    "5": 0.75rem,
+    "6": 0.875rem,
+    "7": 1rem,
+    "8": 1.25rem,
+    "9": 1.5rem,
+    "10": 1.75rem,
+    "11": 2rem,
+    "12": 2.5rem,
+    "13": 3rem,
+    "14": 4rem
+);
+
+/* Base layout classes */
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* Grid gaps */
+@each $key, $val in $grid-gaps {
+    .gap-#{$key} > * {
+        padding: $val;
+    }
+    .gap-#{$key} {
+        margin-left: -$val;
+        margin-right: -$val;
+    }
+}
+
+/* Justify content classes */
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+@each $val in $layout-values {
+    .justify-#{$val} {
+        justify-content: $val;
+    }
+}
+
+/* Column classes */
+@include pixel {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-pixel {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+@include phone {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-phone {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+@include tablet {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-tablet {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+@include desktop {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-desktop {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+@include widescreen {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-widescreen {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+@include fullhd {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-fullhd {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}

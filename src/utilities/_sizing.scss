@@ -1,0 +1,89 @@
+$default-width-height: 0.25rem !default;
+$values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96;
+
+$sizing-utilities: (
+    "width": "w",
+    "height": "h",
+    "max-height": "max-h",
+);
+
+@each $property, $prefix in $sizing-utilities {
+    @each $v in $values {
+        .#{$prefix}-#{$v} {
+            #{$property}: $default-width-height * $v;
+        }
+    }
+
+    .#{$prefix}-full {
+        #{$property}: 100%;
+    }
+
+    .#{$prefix}-screen {
+        #{$property}: 100v+#{$prefix};
+    }
+}
+
+/* Width specific */
+.w-auto {
+    width: auto;
+}
+
+.w-min {
+    width: min-content;
+}
+
+.w-max {
+    width: max-content;
+}
+
+/* min/max-width/height */
+.min-w-0 {
+    min-width: 0px;
+}
+.min-w-full {
+    min-width: 100%;
+}
+.min-w-min {
+    min-width: min-content;
+}
+.min-w-max {
+    min-width: max-content;
+}
+
+.min-h-0 {
+    min-height: 0;
+}
+.min-h-full {
+    min-height: 100%;
+}
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.max-w-phone {
+    max-width: 640px;
+}
+.max-w-tablet {
+    max-width: 768px;
+}
+.max-w-desktop {
+    max-width: 1024px;
+}
+.max-w-widescreen {
+    max-width: 1280px;
+}
+.max-w-fullhd {
+    max-width: 1536px;
+}
+.max-w-min {
+    max-width: min-content;
+}
+.max-w-max {
+    max-width: max-content;
+}
+.max-w-full {
+    max-width: 100%;
+}
+.max-w-0 {
+    max-width: 0;
+}

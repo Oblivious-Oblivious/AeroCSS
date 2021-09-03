@@ -1,0 +1,51 @@
+@mixin button($bg-color: #e2e2e2) {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: 0.25rem * 3.2 0.25rem * 8;
+    font-size: 17px;
+    background-color: $bg-color;
+}
+
+.button {
+    @include button;
+    &:active {
+        background-color: darken(#e2e2e2, 5);
+    }
+}
+
+@each $key, $val in $colors {
+    .button-#{$key} {
+        @include button($val);
+
+        &:hover {
+            background-color: lighten($val, 5);
+        }
+        &:active {
+            background-color: darken($val, 5);
+        }
+    }
+
+    .button-outlined-#{$key} {
+        @include button(#fff);
+        border: 1px solid $val;
+
+        &:hover {
+            background-color: $val;
+        }
+    }
+
+    .button-complement-#{$key} {
+        @include button($val);
+        color: light-comp($val);
+
+        &:hover {
+            color: $val;
+            background-color: light-comp($val);
+        }
+        &:active {
+            background-color: darken(light-comp($val), 10);
+        }
+    }
+}

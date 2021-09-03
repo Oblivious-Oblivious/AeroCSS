@@ -1,0 +1,59 @@
+$default-border-radius: 0.25rem !default;
+
+$border-radius-map: (
+    "none": 0,
+    "0": 0,
+    "1": 0.0625rem,
+    "2": 0.125rem,
+    "3": 0.25rem,
+    "4": 0.5rem,
+    "5": 0.75rem,
+    "6": 1rem,
+    "7": 1.5rem,
+    "8": 2rem,
+    "full": 99999px
+);
+
+@each $prefix, $value in $border-radius-map {
+    .border-radius-#{$prefix} {
+        border-radius: $value;
+    }
+}
+
+$border-thickness-values: 0, 1, 2, 4, 8;
+
+/* TODO Implement border colors */
+@each $value in $border-thickness-values {
+    .border-#{$value} {
+        border-width: $value+px;
+    }
+
+    .border-l-#{$value} {
+        border-left-width: $value+px;
+    }
+    .border-r-#{$value} {
+        border-right-width: $value+px;
+    }
+    .border-t-#{$value} {
+        border-top-width: $value+px;
+    }
+    .border-b-#{$value} {
+        border-bottom-width: $value+px;
+    }
+}
+
+.border-solid {
+    border-style: solid;
+}
+.border-dashed {
+    border-style: dashed;
+}
+.border-dotted {
+    border-style: dotted;
+}
+.border-double {
+    border-style: double;
+}
+.border-none {
+    border-style: none;
+}

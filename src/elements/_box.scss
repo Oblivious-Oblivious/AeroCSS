@@ -1,0 +1,48 @@
+@mixin box($bg-color: map-get($colors, "white")) {
+    display: block;
+    padding: 0.5rem;
+    box-shadow: 2px 4px 8px $bg-color;
+    border-radius: 0.25rem;
+    border: 1px solid $bg-color;
+    background-color: $bg-color;
+    
+    /* TODO Extract below */
+    &:hover {
+        transition: 200ms ease-in-out;
+        transform: translateY(-3px);
+    }
+    transition: 200ms ease-in-out;
+    
+    /* TODO Remove in the future */
+    .box-title {
+        font-size: 17px;
+        padding-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    .box-body {
+        font-size: 17px;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+    /*****************************/
+}
+
+@each $key, $val in $colors {
+    .box-#{$key} {
+        @include box($val);
+    }
+
+    /* Light and dark variations */
+    @for $i from 1 through 9 {
+        .box-#{$key}-light-#{$i} {
+            @include box(mix(white, $val, $i * 10));
+        }
+
+        .box-#{$key}-dark-#{$i} {
+            @include box(mix(black, $val, $i * 10));
+        }
+    }
+}
