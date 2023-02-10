@@ -9,11 +9,12 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "gulp": "^4.0.2",
-        "gulp-clean-css": "^4.3.0",
-        "gulp-purgecss": "^4.0.3",
-        "gulp-sass": "^5.0.0",
-        "gulp-strip-css-comments": "^2.0.0",
-        "sass": "^1.38.1"
+        "gulp": "*",
+        "gulp-clean-css": "*",
+        "gulp-minify-css": "*",
+        "gulp-purgecss": "*",
+        "gulp-sass": "*",
+        "gulp-strip-css-comments": "*",
+        "sass": "*"
     }
 }
