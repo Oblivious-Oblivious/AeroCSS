@@ -11,9 +11,9 @@ const build_styles = () => {
         .pipe(dest("export"));
 };
 
-// const watch_task = () => {
-//     watch(["src/**/*.scss"], build_styles);
-// };
+const watch_task = () => {
+    watch(["src/**/*.scss"], build_styles);
+};
 
-// exports.default = series(build_styles, watch_task);
-exports.default = series(build_styles);
+exports.default = series(build_styles, watch_task);
+// exports.default = series(build_styles);
