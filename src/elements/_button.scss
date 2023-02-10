@@ -38,14 +38,14 @@
 
     .button-complement-#{$key} {
         @include button($val);
-        color: light-comp($val);
+        color: lighten(complement($val), 30%);
 
         &:hover {
             color: $val;
-            background-color: light-comp($val);
+            background-color: lighten(complement($val), 30%);
         }
         &:active {
-            background-color: darken(light-comp($val), 10);
+            background-color: darken(lighten(complement($val), 30%), 10);
         }
     }
 }
