@@ -38,11 +38,11 @@
     /* Light and dark variations */
     @for $i from 1 through 9 {
         .box-#{$key}-light-#{$i} {
-            @include box(mix(white, $val, $i * 10));
+            @include box(mix(white, $val, $i * 10%));
         }
 
         .box-#{$key}-dark-#{$i} {
-            @include box(mix(black, $val, $i * 10));
+            @include box(mix(black, $val, $i * 10%));
         }
     }
 }
