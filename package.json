@@ -12,7 +12,6 @@
         "gulp": "*",
         "gulp-clean-css": "*",
         "gulp-minify-css": "*",
-        "gulp-purgecss": "*",
         "gulp-sass": "*",
         "gulp-strip-css-comments": "*",
         "sass": "*"

@@ -9,7 +9,6 @@
 /* Grid and Flexbox */
 @import "grid/breakpoints";
 @import "grid/grid";
-@import "grid/justify";
 
 /* Utilities */
 @import "utilities/borders";
@@ -22,9 +21,7 @@
 @import "utilities/visibility";
 
 /* Elements and components */
-@import "elements/badge";
-@import "elements/box";
-@import "elements/button";
-@import "elements/container";
-
+@import "components/badge";
+@import "components/box";
+@import "components/button";
 @import "components/navbar";
