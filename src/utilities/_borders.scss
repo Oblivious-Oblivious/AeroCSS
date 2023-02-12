@@ -42,6 +42,12 @@ $border-thickness-values: 0, 1, 2, 4, 8;
     }
 }
 
+@each $key, $val in $colors {
+    .border-#{$key} {
+        border-color: $val;
+    }
+}
+
 .border-solid {
     border-style: solid;
 }

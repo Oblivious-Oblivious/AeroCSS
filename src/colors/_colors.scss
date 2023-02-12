@@ -10,9 +10,6 @@
     .bg-#{$key} {
         background-color: $val;
     }
-    .border-#{$key} {
-        border-color: $val;
-    }
 
     @if($val != black and $val != white) {
         /* Light variations */
@@ -28,9 +25,6 @@
             .bg-#{$key}-light-#{$i} {
                 background-color: mix(white, $val, $i * 10%);
             }
-            .border-#{$key}-light-#{$i} {
-                border-color: mix(white, $val, $i * 10%);
-            }
         }
     
         /* Dark variations */
@@ -45,9 +39,6 @@
             }
             .bg-#{$key}-dark-#{$i} {
                 background-color: mix(black, $val, $i * 10%);
-            }
-            .border-#{$key}-light-#{$i} {
-                border-color: mix(black, $val, $i * 10%);
             }
         }
     }
