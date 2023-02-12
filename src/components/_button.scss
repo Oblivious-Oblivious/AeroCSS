@@ -6,6 +6,7 @@
     padding: 0.25rem * 3.2 0.25rem * 8;
     font-size: 17px;
     background-color: $bg-color;
+    // TODO Use contrast math to switch button text color fron light to dark
 }
 
 .button {
@@ -33,19 +34,6 @@
 
         &:hover {
             background-color: $val;
-        }
-    }
-
-    .button-complement-#{$key} {
-        @include button($val);
-        color: lighten(complement($val), 30%);
-
-        &:hover {
-            color: $val;
-            background-color: lighten(complement($val), 30%);
-        }
-        &:active {
-            background-color: darken(lighten(complement($val), 30%), 10);
         }
     }
 }
