@@ -1,27 +1,20 @@
 /* Can edit customs file */
-@import "base/custom";
+@import "custom";
 /*************************/
-@import "base/resets";
 
 /* Colors */
-@import "colors/colors";
+@import "colors";
 
 /* Grid and Flexbox */
-@import "grid/breakpoints";
-@import "grid/grid";
+@import "breakpoints";
+@import "grid";
 
 /* Utilities */
-@import "utilities/borders";
-@import "utilities/displays";
-@import "utilities/fonts";
-@import "utilities/opacity";
-@import "utilities/shadows";
-@import "utilities/sizing";
-@import "utilities/spacing";
-@import "utilities/visibility";
-
-/* Elements and components */
-@import "components/badge";
-@import "components/box";
-@import "components/button";
-@import "components/navbar";
+@import "borders";
+@import "displays";
+@import "fonts";
+@import "opacity";
+@import "shadows";
+@import "sizing";
+@import "spacing";
+@import "visibility";

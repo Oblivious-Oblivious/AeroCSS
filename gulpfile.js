@@ -12,8 +12,7 @@ const build_styles = () => {
 };
 
 const watch_task = () => {
-    watch(["src/**/*.scss"], build_styles);
+    watch(["src/*.scss"], build_styles);
 };
 
 exports.default = series(build_styles, watch_task);
-// exports.default = series(build_styles);

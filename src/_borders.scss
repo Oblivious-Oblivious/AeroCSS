@@ -1,26 +1,27 @@
-$default-border-radius: 0.25rem !default;
-
 $border-radius-map: (
-    "none": 0,
     "0": 0,
     "1": 0.0625rem,
     "2": 0.125rem,
-    "3": 0.25rem,
-    "4": 0.5rem,
-    "5": 0.75rem,
-    "6": 1rem,
-    "7": 1.5rem,
-    "8": 2rem,
+    "3": 0.1875rem,
+    "4": 0.25rem,
+    "5": 0.375rem,
+    "6": 0.5rem,
+    "7": 0.625rem,
+    "8": 0.75rem,
+    "9": 1rem,
+    "10": 1.25rem,
+    "11": 1.5rem,
+    "12": 1.75rem,
     "full": 99999px
 );
+
+$border-thickness-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 
 @each $prefix, $value in $border-radius-map {
     .border-radius-#{$prefix} {
         border-radius: $value;
     }
 }
-
-$border-thickness-values: 0, 1, 2, 4, 8;
 
 /* TODO Implement border colors */
 @each $value in $border-thickness-values {
