@@ -1,26 +1,136 @@
-@use "sass:math";
-
-$grid-columns: 12;
 $grid-gaps: (
     "0": 0,
     "1": 0.125rem,
-    "2": 0.375rem,
-    "3": 0.5rem,
-    "4": 0.625rem,
-    "5": 0.75rem,
-    "6": 0.875rem,
-    "7": 1rem,
-    "8": 1.25rem,
-    "9": 1.5rem,
-    "10": 1.75rem,
-    "11": 2rem,
-    "12": 2.5rem
+    "2": 0.25rem,
+    "3": 0.375rem,
+    "4": 0.5rem,
+    "5": 0.625rem,
+    "6": 0.75rem,
+    "7": 0.875rem,
+    "8": 1rem,
+    "9": 1.25rem,
+    "10": 1.5rem,
+    "11": 1.75rem,
+    "12": 2rem,
+);
+
+$breakpoints: (
+    "pixel": 0,
+    "phone": 480px,
+    "tablet": 769px,
+    "desktop": 1088px,
+    "widescreen": 1408px,
+    // TODO Make bigger than that
+    "fullhd": 1728px
 );
 
 /* Base layout classes */
-.row {
-    display: flex;
-    flex-flow: row wrap;
+// TODO Maybe add up to 100 (or at least more than 12)
+@for $i from 1 through 12 {
+    .row-#{$i} {
+        display: flex;
+        flex-flow: row wrap;
+
+        .col {
+            @media(min-width: map-get($breakpoints, "pixel")) {
+                box-sizing: border-box;
+                flex-grow: 0;
+                // width: 100%;
+                @if calc($i/12) * 100% < 100% {
+                    @if 100% * $i < 100% {
+                        width: calc(100% / $i);
+                    }
+                    @else {
+                        width: 100%;
+                    }
+                }
+                @else {
+                    width: calc(100% / $i) * 12;
+                }
+            }
+            
+            @media(min-width: map-get($breakpoints, "phone")) {
+                box-sizing: border-box;
+                flex-grow: 0;
+                @if calc($i/6) * 50% < 100% {
+                    @if 50% * $i < 100% {
+                        width: calc(100% / $i);
+                    }
+                    @else {
+                        width: 50%;
+                    }
+                }
+                @else {
+                    width: calc(100% / $i) * 6;
+                }
+            }
+            
+            @media(min-width: map-get($breakpoints, "tablet")) {
+                box-sizing: border-box;
+                flex-grow: 0;
+                @if calc($i/4) * 33.33% < 100% {
+                    @if 33.33% * $i < 100% {
+                        width: calc(100% / $i);
+                    }
+                    @else {
+                        width: 33.33%;
+                    }
+                }
+                @else {
+                    width: calc(100% / $i) * 4;
+                }
+            }
+            
+            @media(min-width: map-get($breakpoints, "desktop")) {
+                box-sizing: border-box;
+                flex-grow: 0;
+                @if calc($i/3) * 25% < 100% {
+                    @if 25% * $i < 100% {
+                        width: calc(100% / $i);
+                    }
+                    @else {
+                        width: 25%;
+                    }
+                }
+                @else {
+                    width: calc(100% / $i) * 3;
+                }
+            }
+            
+            @media(min-width: map-get($breakpoints, "widescreen")) {
+                box-sizing: border-box;
+                flex-grow: 0;
+                @if calc($i/2) * 16.66% < 100% {
+                    @if 16.66% * $i < 100% {
+                        width: calc(100% / $i);
+                    }
+                    @else {
+                        width: 16.66%;
+                    }
+                }
+                @else {
+                    width: calc(100% / $i) * 2;
+                }
+            }
+            
+            @media(min-width: map-get($breakpoints, "fullhd")) {
+                box-sizing: border-box;
+                flex-grow: 0;
+                // width: calc(100% / $i);
+                @if calc($i/1) * 8.33% < 100% {
+                    @if 8.33% * $i < 100% {
+                        width: calc(100% / $i);
+                    }
+                    @else {
+                        width: 8.33;
+                    }
+                }
+                @else {
+                    width: calc(100% / $i) * 1;
+                }
+            }
+        }
+    }
 }
 
 /* Grid gaps */
@@ -31,66 +141,5 @@ $grid-gaps: (
     .gap-#{$key} {
         margin-left: -$val;
         margin-right: -$val;
-    }
-}
-
-/* Column classes */
-@include pixel {
-    @for $i from 1 through $grid-columns {
-        .col-#{$i}-pixel {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
-    }
-}
-
-@include phone {
-    @for $i from 1 through $grid-columns {
-        .col-#{$i}-phone {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
-    }
-}
-
-@include tablet {
-    @for $i from 1 through $grid-columns {
-        .col-#{$i}-tablet {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
-    }
-}
-
-@include desktop {
-    @for $i from 1 through $grid-columns {
-        .col-#{$i}-desktop {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
-    }
-}
-
-@include widescreen {
-    @for $i from 1 through $grid-columns {
-        .col-#{$i}-widescreen {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
-    }
-}
-
-@include fullhd {
-    @for $i from 1 through $grid-columns {
-        .col-#{$i}-fullhd {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
     }
 }
