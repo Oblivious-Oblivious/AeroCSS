@@ -1,20 +1,13 @@
 /* Can edit customs file */
-@import "custom";
+@import "_custom";
 /*************************/
 
-/* Colors */
-@import "colors";
-
-/* Grid and Flexbox */
-@import "breakpoints";
-@import "grid";
-
-/* Utilities */
 @import "borders";
+@import "colors";
 @import "displays";
 @import "fonts";
+@import "grid";
 @import "opacity";
-@import "shadows";
 @import "sizing";
 @import "spacing";
 @import "visibility";
