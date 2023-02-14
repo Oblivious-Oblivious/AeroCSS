@@ -20,12 +20,9 @@ $breakpoints: (
     "tablet": 769px,
     "desktop": 1088px,
     "widescreen": 1408px,
-    // TODO Make bigger than that
     "fullhd": 1728px
 );
 
-/* Base layout classes */
-// TODO Maybe add up to 100 (or at least more than 12)
 @for $i from 1 through 12 {
     .row-#{$i} {
         display: flex;
@@ -133,7 +130,6 @@ $breakpoints: (
     }
 }
 
-/* Grid gaps */
 @each $key, $val in $grid-gaps {
     .gap-#{$key} > * {
         padding: $val;
