@@ -16,6 +16,7 @@ $border-radius-map: (
 );
 
 $border-thickness-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+$border-styles: solid, dashed, dotted, double, none;
 
 @each $prefix, $value in $border-radius-map {
     .border-radius-#{$prefix} {
@@ -23,44 +24,35 @@ $border-thickness-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
     }
 }
 
-/* TODO Implement border colors */
-@each $value in $border-thickness-values {
-    .border-#{$value} {
-        border-width: $value+px;
-    }
+@each $thickness in $border-thickness-values {
+    @each $style in $border-styles {
+        @each $colorkey, $colorval in $colors {
+            .border-#{$colorkey}-#{$style}-#{$thickness} {
+                border-style: $style;
+                border-width: $thickness+px;
+                border-color: $colorval;
+            }
 
-    .border-l-#{$value} {
-        border-left-width: $value+px;
+            .border-l-#{$colorkey}-#{$style}-#{$thickness} {
+                border-style: $style;
+                border-left-width: $thickness+px;
+                border-color: $colorval;
+            }
+            .border-r#{$colorkey}-#{$style}-#{$thickness} {
+                border-style: $style;
+                border-right-width: $thickness+px;
+                border-color: $colorval;
+            }
+            .border-t#{$colorkey}-#{$style}-#{$thickness} {
+                border-style: $style;
+                border-top-width: $thickness+px;
+                border-color: $colorval;
+            }
+            .border-b-#{$colorkey}-#{$style}-#{$thickness} {
+                border-style: $style;
+                border-bottom-width: $thickness+px;
+                border-color: $colorval;
+            }
+        }
     }
-    .border-r-#{$value} {
-        border-right-width: $value+px;
-    }
-    .border-t-#{$value} {
-        border-top-width: $value+px;
-    }
-    .border-b-#{$value} {
-        border-bottom-width: $value+px;
-    }
-}
-
-@each $key, $val in $colors {
-    .border-#{$key} {
-        border-color: $val;
-    }
-}
-
-.border-solid {
-    border-style: solid;
-}
-.border-dashed {
-    border-style: dashed;
-}
-.border-dotted {
-    border-style: dotted;
-}
-.border-double {
-    border-style: double;
-}
-.border-none {
-    border-style: none;
 }
