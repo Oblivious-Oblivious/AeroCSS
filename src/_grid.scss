@@ -27,6 +27,7 @@ $breakpoints: (
     .row-#{$i} {
         display: flex;
         flex-flow: row wrap;
+        justify-content: space-around;
 
         .col {
             @media(min-width: map-get($breakpoints, "pixel")) {
@@ -139,3 +140,5 @@ $breakpoints: (
         margin-right: -$val;
     }
 }
+
+// TODO Add custom grid combinations (1-11), (5-2-5) and so on.
