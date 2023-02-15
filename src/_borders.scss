@@ -15,14 +15,14 @@ $border-radius-map: (
     "full": 99999px
 );
 
-$border-thickness-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
-$border-styles: solid, dashed, dotted, double, none;
-
 @each $prefix, $value in $border-radius-map {
     .border-radius-#{$prefix} {
         border-radius: $value;
     }
 }
+
+$border-thickness-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+$border-styles: solid, dashed, dotted, double, hidden, none;
 
 @each $thickness in $border-thickness-values {
     @each $style in $border-styles {
@@ -30,27 +30,6 @@ $border-styles: solid, dashed, dotted, double, none;
             .border-#{$colorkey}-#{$style}-#{$thickness} {
                 border-style: $style;
                 border-width: $thickness+px;
-                border-color: $colorval;
-            }
-
-            .border-l-#{$colorkey}-#{$style}-#{$thickness} {
-                border-style: $style;
-                border-left-width: $thickness+px;
-                border-color: $colorval;
-            }
-            .border-r#{$colorkey}-#{$style}-#{$thickness} {
-                border-style: $style;
-                border-right-width: $thickness+px;
-                border-color: $colorval;
-            }
-            .border-t#{$colorkey}-#{$style}-#{$thickness} {
-                border-style: $style;
-                border-top-width: $thickness+px;
-                border-color: $colorval;
-            }
-            .border-b-#{$colorkey}-#{$style}-#{$thickness} {
-                border-style: $style;
-                border-bottom-width: $thickness+px;
                 border-color: $colorval;
             }
         }
