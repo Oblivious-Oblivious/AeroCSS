@@ -3,53 +3,82 @@
 $colors: (
     "primary": #b76e79,
 
-    "red": #ff1414,
-        "maroon": #800000,
-        "brown": #a52a2a,
-        "tan": #d2b48c,
-    "orange": #ffa500,
-        "gold": #ffd700,
-        "yellow": #ffff14,
-    "lime": #14ff14,
-        "olive": #858500,
-    "green": #009400,
+    "coral": #f88379,
+    "red": #ed1c24,
+    "crimson": #dc143c,
+    "rosewood": #65000b,
+
+    "almond": #efdecd,
+    "brown": #9F8170,
+    "coffee": #6f4e37,
+    "umbral": #635147,
+
+    "gold": #ffd700,
+    "orange": #f7941d,
+    "pomodoro": #ff6347,
+    "mahogany": #c04000,
+
+    "cream": #fffcc9,
+    "yellow": #fff200,
+    "citrine": #e4d00a,
+    "saffron": #f4c431,
+
+    "lime": #9efd3f,
+    "green": #00a651,
+    "olive": #7ba05b,
+    "forest": #00563B,
+
+    "azure": #e4ffff,
+    "cyan": #15f4ee,
+    "tiffany": #81D8D0,
     "teal": #009494,
-    "cyan": #00f0f0,
+
+    "periwinkle": #ccccff,
     "blue": #1414ff,
-        "navy": #000094,
-    "purple": #9914ff,
-        "magenta": #ff2eff,
-        "pink": #ffc0cb,
-    "gray": #828282,
-        "silver": #c0c0c0,
-    "black": #0a0a0a,
-    "white": #f7f7f7
+    "lapis": #26619c,
+    "navy": #000094,
+
+    "lilac": #c8a2c8,
+    "purple": #a020f0,
+    "royal": #7851a9,
+    "indigo": #4b0082,
+
+    "blush": #e082b7,
+    "magenta": #ff0090,
+    "violet": #c71585,
+    "murrey": #7d0047,
+
+    "champagne": #f1ddcf,
+    "pink": #ffc0cb,
+    "valentine": #e6a6be,
+    "rose": #c08081,
+
+    "snow": #fffafa,
+    "white": #f7f7f7,
+    "smoke": #f5f5f5,
+    "bone": #e3dac9,
+
+    "silver": #c0c0c0,
+    "gray": #848482,
+    "dim": #555555,
+    "metal": #2a3439,
+
+    "onyx": #353839,
+    "black": #1b1b1b,
+    "raisin": #242124,
+    "night": #111111,
 ) !default;
 
-/* Reset styles */
 * {
     color: inherit;
     margin: 0;
 }
 
+*, ::before, ::after {
+    border-width: 0;
+    border-style: solid;
+}
+
 body {
     font-family: "Raleway", sans-serif;
-}
-
-ul {
-    padding: 0;
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-hr {
-    border: 0;
-    border-top: 1px dotted #efefef;
-}
-
-img {
-    max-width: 100%;
 }
